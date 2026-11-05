@@ -1,24 +1,52 @@
 // Edit the copy here; the page components just render it.
+export const contactEmail = "farai@spadeworks.co.zw";
+export const contactPhone = "+263 77 564 3044";
+export const contactPhoneRaw = "+263775643044";
+export const siteUrl = "https://spadeworks.co.zw";
 
-export const services = [
-  ["Accounts payable", "Reads bills from email and PDFs, codes them to the right accounts, and queues them for your approval."],
-  ["Bank and payment reconciliation", "Matches bank lines and Stripe or PayPal payouts to your ledger, and lists only what doesn't fit."],
-  ["Invoicing and collections", "Creates invoices from your orders and chases the overdue ones with reminders that sound like you."],
-  ["Month-end close", "Runs the checklist: accruals, journal entries, variance checks, and a draft close pack."],
-  ["Reporting", "Pulls figures from every system into the report your leadership expects, on schedule."],
-  ["Data cleanup and migration", "Cleans messy spreadsheets and moves history between systems without anyone retyping it."],
+export const pains = [
+  ["01 · Too slow", "Closing takes days", "Typing in bills, bank lines and invoices by hand keeps the books open far too long."],
+  ["02 · Too costly", "You pay twice", "Skilled salaries go on copy-paste, and software subscriptions keep adding to the bill."],
+  ["03 · Too risky", "Small slips, big costs", "A mistyped digit or a double payment usually surfaces late, when it hurts most."],
 ];
 
+export const services = [
+  ["Payables", "Bills read, coded and ready for approval."],
+  ["Receivables", "Invoices sent and overdue ones chased."],
+  ["Reconciliation", "Bank and payment lines matched to the ledger."],
+  ["Payroll and journals", "Entries prepared, checked and posted."],
+  ["Month-end close", "Accruals, variances and a draft close pack."],
+  ["Tax and compliance", "Figures gathered and schedules prepared."],
+  ["Reporting", "Fresh reports in leadership's inbox, on time."],
+  ["Data cleanup", "Messy sheets fixed, history moved between systems."],
+];
+
+export const industries = [
+  "Retail", "Manufacturing", "Banking and microfinance", "Mining",
+  "Agriculture", "Healthcare", "Education", "NGOs and charities",
+  "Logistics", "Hospitality", "Construction", "Telecoms",
+  "Insurance", "Real estate", "Professional services", "Government",
+];
+
+export const reasons = [
+  ["Speed", "Days shrink to minutes", "Bots work in seconds, on schedule, around the clock. Nothing waits for someone to find the time."],
+  ["Cost", "One payment. Done.", "No licence fees, no per-seat charges, no monthly bill. Pay once and the savings keep stacking up."],
+  ["Accuracy", "Right, every time", "Bots never tire or mistype. Odd items go to a person, and every run leaves a clear log."],
+];
+
+export const rental = ["A fee every month, with no end", "Prices climb when the vendor decides", "Stop paying and your bot disappears", "Stuck with one supplier"];
+export const ours = ["Pay once, nothing monthly", "Full source code is yours", "Run it as long as you like", "Free to take it anywhere"];
+
 export const steps = [
-  ["Map the workflow", "We sit with the people who do the work and write down every step, exception and workaround."],
-  ["Build the script", "We write a script for the repetitive parts and leave the judgment calls to your team."],
-  ["Run it side by side", "The script runs next to your manual process until the results match and you trust them."],
-  ["Hand it over", "You get the code, a plain-English guide, and support when something changes."],
+  ["We learn your process", "We work with your team to capture every step and exception."],
+  ["We build your bot", "Repetitive work is automated, judgment stays with people."],
+  ["We test it beside you", "It runs next to your manual process until you trust it."],
+  ["You take the keys", "Code, plain-English guide and support are all yours."],
 ];
 
 export const commitments = [
-  ["You own the code", "Every script we write is yours. No licence fees, and no lock-in to us."],
-  ["People approve the money", "Scripts prepare payments and entries. A person signs off before anything is paid or posted."],
+  ["You own the code", "Every bot we write is yours. No licence fees, and no lock-in to us."],
+  ["People approve the money", "Bots prepare payments and entries. A person signs off before anything is paid or posted."],
   ["Every run leaves a log", "You can see what ran, what it changed and what it skipped, which makes audits easier."],
   ["Built around your tools", "We work with the spreadsheets, accounting software and bank exports you already use."],
 ];
@@ -32,8 +60,6 @@ export const demoRows = [
   { bank: "Unknown transfer", ledger: "No match found", amount: "-742.10", state: "review" },
 ];
 
-// The script output shown beside the table. `at` = how many rows must be resolved before
-// the line appears (-1 = always visible, 0 = as soon as the run starts).
 export const logLines = [
   { at: -1, parts: [{ cls: "log-prompt", text: "$" }, { text: " python reconcile.py --month october" }] },
   { at: 0, parts: [{ text: "Reading bank feed: 5 lines" }] },
@@ -42,5 +68,3 @@ export const logLines = [
   { at: 5, parts: [{ cls: "log-warn", text: "1 needs a person:" }, { text: " Unknown transfer" }] },
   { at: 5, parts: [{ text: "Saved october_reconciliation.xlsx" }] },
 ];
-
-export const contactEmail = "hello@spadeworks.example"; // replace with your real address

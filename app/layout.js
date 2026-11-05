@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Spadeworks Automation | Finance and accounting, automated",
+  metadataBase: new URL("https://spadeworks.co.zw"),
+  title: "Spadeworks Automation | Every finance task. Automated.",
   description:
-    "Spadeworks Automation builds software scripts that take over repetitive finance and accounting work, so your team gets time back and your month-end moves faster.",
+    "Custom software bots for the finance and accounting team of any business, in any industry. Faster. Cheaper. Sharper. Yours. Pay once and own the source code.",
 };
 
 export default function RootLayout({ children }) {

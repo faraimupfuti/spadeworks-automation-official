@@ -23,12 +23,24 @@ export const commitments = [
   ["Built around your tools", "We work with the spreadsheets, accounting software and bank exports you already use."],
 ];
 
+// Sample data for the reconciliation demo.
 export const demoRows = [
   { bank: "Stripe payout", ledger: "14 sales receipts", amount: "4,218.50", state: "matched" },
   { bank: "Harlow Supplies", ledger: "Bill 8841", amount: "-1,960.00", state: "matched" },
   { bank: "Payroll batch", ledger: "Payroll journal", amount: "-12,480.00", state: "matched" },
   { bank: "Office rent", ledger: "Rent accrual", amount: "-3,200.00", state: "matched" },
   { bank: "Unknown transfer", ledger: "No match found", amount: "-742.10", state: "review" },
+];
+
+// The script output shown beside the table. `at` = how many rows must be resolved before
+// the line appears (-1 = always visible, 0 = as soon as the run starts).
+export const logLines = [
+  { at: -1, parts: [{ cls: "log-prompt", text: "$" }, { text: " python reconcile.py --month october" }] },
+  { at: 0, parts: [{ text: "Reading bank feed: 5 lines" }] },
+  { at: 0, parts: [{ text: "Matching against the ledger..." }] },
+  { at: 4, parts: [{ cls: "log-ok", text: "4 matched" }] },
+  { at: 5, parts: [{ cls: "log-warn", text: "1 needs a person:" }, { text: " Unknown transfer" }] },
+  { at: 5, parts: [{ text: "Saved october_reconciliation.xlsx" }] },
 ];
 
 export const contactEmail = "hello@spadeworks.example"; // replace with your real address

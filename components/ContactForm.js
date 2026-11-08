@@ -54,6 +54,7 @@ export default function ContactForm() {
               <input type="checkbox" name="services" value={name} /> <span>{name}</span>
             </label>
           ))}
+          <label className="check"><input type="checkbox" name="services" value="Facial recognition system" /> <span>Facial recognition</span></label>
           <label className="check"><input type="checkbox" name="services" value="Something else" /> <span>Something else</span></label>
         </div>
       </fieldset>

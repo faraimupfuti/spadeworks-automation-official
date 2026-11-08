@@ -6,7 +6,7 @@ export const metadata = {
   metadataBase: new URL("https://spadeworks.co.zw"),
   title: "Spadeworks Automation | Every finance task. Automated.",
   description:
-    "Custom software bots for the finance and accounting team of any business, in any industry. Faster. Cheaper. Sharper. Yours. Pay once and own the source code.",
+    "Custom software bots for the finance and accounting team of any business, in any industry. We help companies cut labour costs, work faster and make fewer mistakes. Pay once and own the source code.",
 };
 
 export default function RootLayout({ children }) {

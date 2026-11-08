@@ -68,3 +68,10 @@ export const logLines = [
   { at: 5, parts: [{ cls: "log-warn", text: "1 needs a person:" }, { text: " Unknown transfer" }] },
   { at: 5, parts: [{ text: "Saved october_reconciliation.xlsx" }] },
 ];
+
+// The three promises, in plain words. Used on the home page and the facial recognition page.
+export const outcomes = [
+  ["Lower labour costs", "Your team spends less paid time on typing, copying and checking. Our bots do the repeat work, so you need fewer hours for it and your people can move to work that grows the business."],
+  ["Faster operations", "Jobs that take days are done in minutes. Bots work all day and all night, so nothing sits in a queue waiting for someone to get to it."],
+  ["Fewer mistakes", "Bots do not get tired and do not mistype. Anything unusual is passed to a person, so errors are caught early and not found weeks later."],
+];

@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import Demo from "../components/Demo";
 import ContactForm from "../components/ContactForm";
-import { pains, services, industries, reasons, rental, ours, steps, commitments, demoRows, logLines, contactEmail, contactPhone, contactPhoneRaw } from "../components/data";
+import { outcomes, pains, services, industries, reasons, rental, ours, steps, commitments, demoRows, logLines, contactEmail, contactPhone, contactPhoneRaw } from "../components/data";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
             <p className="lede">
               Custom software bots for the finance and accounting team of any business, in any industry.
             </p>
+            <p className="lede lede-2">
+              We help companies <b>cut labour costs</b>, <b>work faster</b> and <b>make fewer mistakes</b>.
+            </p>
             <p className="tagline">Faster. Cheaper. Sharper. Yours.</p>
             <div className="actions">
               <a className="btn btn-red" href="#book">Book a free workflow review</a>
@@ -21,6 +25,21 @@ export default function Home() {
           </div>
           <div className="hero-art">
             <Image src="/img/dome.png" width={1600} height={800} alt="" priority />
+          </div>
+        </div>
+      </section>
+
+      <section className="outcomes" aria-labelledby="outcomes-title">
+        <div className="wrap">
+          <h2 className="section-head" id="outcomes-title">Spend less. Move faster. Make fewer mistakes.</h2>
+          <div className="outcome-grid">
+            {outcomes.map(([title, text], i) => (
+              <div className="outcome" key={title}>
+                <span className="outcome-n" aria-hidden="true">0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -136,6 +155,20 @@ export default function Home() {
                 <p>{text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="fr-teaser" aria-labelledby="fr-teaser-title">
+        <div className="wrap fr-teaser-inner">
+          <div>
+            <p className="tag">New</p>
+            <h2 id="fr-teaser-title">Facial recognition for government and business</h2>
+            <p>
+              Check identity, control access and record attendance in seconds. Remove ghost workers and
+              duplicate records, and cut the hours spent on manual ID checks.
+            </p>
+            <Link className="btn btn-red" href="/facial-recognition/">Explore facial recognition</Link>
           </div>
         </div>
       </section>

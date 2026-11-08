@@ -10,6 +10,7 @@ export default function Footer() {
           <p>Custom software bots for the finance and accounting team of any business, in any industry.</p>
         </div>
         <div className="footer-contact">
+          <p><a href="/facial-recognition/">Facial recognition</a></p>
           <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
           <p><a href={`tel:${contactPhoneRaw}`}>{contactPhone}</a></p>
           <p><a href="https://spadeworks.co.zw">spadeworks.co.zw</a></p>

@@ -10,6 +10,7 @@ export default function Header() {
         </Link>
         <nav className="site-nav" aria-label="Main">
           <Link href="/#services">Services</Link>
+          <Link href="/facial-recognition/">Facial recognition</Link>
           <Link href="/#why">Why us</Link>
           <Link href="/#process">How we work</Link>
           <Link className="btn btn-small" href="/#book">Book a service</Link>

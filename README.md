@@ -1,29 +1,49 @@
-# Spadeworks Automation website (Next.js)
+# Spadeworks Automation website
 
-Next.js (App Router) with a static export, hosted on Netlify.
+Next.js 15 App Router website exported as static files and deployed on **Cloudflare Pages**. The contact form is handled by a Cloudflare Pages Function and delivered through Resend.
 
 ## Run locally
 
-    npm install
-    npm run dev
+```bash
+npm install
+npm run dev
+```
 
-Open http://localhost:3000
+Open http://localhost:3000.
 
-## Deploy to Netlify
+## Deploy to Cloudflare Pages
 
-1. Push this folder to a GitHub repository.
-2. In Netlify: Add new site > Import an existing project > pick the repository.
-3. `netlify.toml` already sets the build command (`npm run build`) and publish folder (`out`).
+1. Push this project to a GitHub repository.
+2. In the Cloudflare dashboard, open **Workers & Pages → Create → Pages → Connect to Git**.
+3. Select the repository and configure:
+   - Framework preset: **Next.js (Static HTML Export)**, or **None** if that preset is unavailable
+   - Build command: `npm run build`
+   - Build output directory: `out`
+   - Root directory: `/` (the directory containing this README and `package.json`)
+   - Node.js version: `20`
+4. Create the Pages project and wait for the first deployment.
+5. In **Settings → Variables and Secrets**, add these production variables:
+   - `RESEND_API_KEY` — a Resend API key (mark as secret)
+   - `CONTACT_TO` — the inbox that should receive website enquiries
+   - `CONTACT_FROM` — a sender identity verified in Resend, for example `Spadeworks Website <website@spadeworks.co.zw>`
+6. Redeploy after adding the variables.
+7. In **Custom domains**, add `spadeworks.co.zw` and `www.spadeworks.co.zw` if both should work. Follow Cloudflare's DNS prompts and choose the preferred primary domain.
 
-The contact form uses Netlify Forms. After the first deploy, submissions appear under Forms in
-the Netlify dashboard, where you can add email notifications.
+The `functions/api/contact.js` file is deployed automatically as `/api/contact`. The Resend API key stays server-side and is never included in the browser bundle.
 
-## Editing
+## Contact form configuration
 
-- Services, steps, commitments, demo data, contact email: `components/data.js`
-- Page layout: `app/page.js`
-- Colours, fonts, spacing: top of `app/globals.css`
-- Reconciliation demo animation: `components/Ledger.js`
+The contact form no longer depends on Netlify Forms. It posts to `/api/contact`, where a Cloudflare Pages Function validates the submission and sends an email through Resend. Configure the three environment variables above before testing the form.
 
-Because the site is a static export, it can't use server features such as API routes or
-server-side rendering. For a marketing site like this you don't need them.
+## Project structure
+
+- `app/` — Next.js routes and page layout
+- `components/` — reusable site components
+- `public/` — static assets
+- `functions/api/contact.js` — Cloudflare Pages contact endpoint
+- `next.config.mjs` — static export configuration
+
+## Notes
+
+- This is a static-export deployment; it does not require a Next.js server or a Cloudflare Worker running the full Next.js application.
+- If you later add server-side Next.js features, API routes, or dynamic rendering, the deployment architecture will need to change.
